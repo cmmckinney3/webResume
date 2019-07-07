@@ -1,0 +1,67 @@
+<div class="container">
+
+<!--  <nav class="navbar sticky-top navbar-default navbar-expand-sm">
+    {{#link-to "index" tagName="li"}}<a class="navbar-brand" href=""><img src="images/CMLogo.PNG" alt=""></a>{{/link-to}}
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {{#link-to "index" class="navbar-brand"}}My Web Resume App{{/link-to}}
+      </div>
+
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="nav navbar-nav">
+          {{#link-to "index" tagName="li"}}<a href="">Home</a>{{/link-to}}
+          {{#link-to "aboutme" tagName="li"}}<a href="">About Me</a>{{/link-to}}
+          {{#link-to "contactme" tagName="li"}}<a href="">Contact Me</a>{{/link-to}}
+          {{#link-to "projects" tagName="li"}}<a href="">Projects</a>{{/link-to}}
+          {{#link-to "goingforward" tagName="li"}}<a href="">Moving Forward...</a>{{/link-to}}
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Admin<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+          {{#link-to 'admin.invitations' tagName="li"}}<a href="">Invitations</a>{{/link-to}}
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+                -->
+
+{{#bs-navbar as |navbar|}}
+  <div class="navbar">
+    {{navbar.toggle}}
+    {{#link-to "index" class="navbar-brand" }}Charlie McKinney{{/link-to}}
+  </div>
+
+  {{#navbar.content}}
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "aboutme"}}About Me{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "contactme"}}Contact Me!{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "goingforward"}}Coming Up!{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "projects"}}Projects{{/nav.link-to}}{{/nav.item}}
+      
+    {{/navbar.nav}}
+    {{#if session.isAuthenticated}}
+      <button {{action 'logout'}}>Logout</button>
+    {{/if}}
+  {{/navbar.content}}
+{{/bs-navbar}}
+
+{{log session.currentUser}}
+  {{outlet}}
+
+</div>
+<footer class="container">
+  <p>&copy; CharlesMcKinneyInc.</p>
+</footer>

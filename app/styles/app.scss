@@ -1,0 +1,35 @@
+@import "ember-bootstrap/bootstrap";
+body {
+  padding-top: 20px;
+
+}
+
+h1, h5 {
+  color: rgba(255, 255, 255, 0.616);
+}
+
+.nav {
+  color: white;
+
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #d7e2e9;
+}
+
+.navbar-default .navbar-brand {
+  color: #d7e2e9;
+}
+.navbar-brand>img {
+  height: 60px;
+  padding: 15px; /* firefox bug fix */
+}
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('images/index_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,58 @@
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+
+
+  <h1>{{headerMessage}}</h1>
+
+  <br><br>
+
+  <h5>{{headersubMessage}}</h5>
+
+  <div class="form-horizontal form-group form-group-lg row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+      {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+      <button class="btn btn-secondary btn-lg btn-block" {{action "saveInvitation"}} disabled={{isDisabled}}>Request More Information</button>
+    </div>
+  </div>
+
+  {{#if responseMessage}}
+    <div class="alert alert-success" role="alert">{{responseMessage}}</div>
+  {{/if}}
+
+  <br><br>
+
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <nav id="sidebar">
+    {{#link-to "aboutme" tagName="li"}}<a href="">About Me</a>{{/link-to}}
+    {{#link-to "projects" tagName="li"}}<a href="">Projects</a>{{/link-to}}
+    {{#link-to "goingforward" tagName="li"}}<a href="">Moving Forward...</a>{{/link-to}}
+  </nav>
+    <div class="col-md-3">
+      <h2>{{aboutMeHeader}}</h2>
+      <p>{{age}}</p>
+      <p>{{aboutMeMessage}}</p>
+      {{#link-to "aboutme" tagName="li"}}<a href="">About Me</a>{{/link-to}}
+    </div>
+    <div class="col-md-3">
+      <h2>{{currentProjHeader}}</h2>
+      <p>{{currentProjBody}}</p>
+      {{#link-to "projects" tagName="li"}}<a href="">Projects</a>{{/link-to}}
+    </div>
+    <div class="col-md-3">
+      <h2>{{goingForwardHeader}}</h2>
+      <p>{{goingForwardMessage}}</p>
+      {{#link-to "goingforward" tagName="li"}}<a href="">Moving Forward...</a>{{/link-to}}
+    </div>
+  </div>
+</div>
